@@ -1,0 +1,2065 @@
+/* ============================================
+   تصميم GreenLabel الاحترافي - ألوان خضراء متناسقة
+   ============================================ */
+
+/* نظام الألوان الأخضر الاحترافي */
+:root {
+    /* الألوان الأساسية - درجات الأخضر */
+    --primary-green: #2E8B57; /* أخضر بحري - أساسي */
+    --secondary-green: #3CB371; /* أخضر متوسط - ثانوي */
+    --light-green: #98FB98; /* أخضر فاتح جداً */
+    --mint-green: #98FF98; /* أخضر نعناعي */
+    --forest-green: #228B22; /* أخضر غابي داكن */
+    --sage-green: #9DC183; /* أخضر حكيم ناعم */
+    
+    /* ألوان محايدة للخلفيات والنصوص */
+    --cream-white: #FAFDFA; /* أبيض كريمي مع لمسة خضراء */
+    --warm-gray: #8A9A8A; /* رمادي دافئ مع لمسة خضراء */
+    --dark-charcoal: #2C3E2C; /* فحمي داكن مع لمسة خضراء */
+    --light-gray: #E8F5E8; /* رمادي فاتح مع لمسة خضراء */
+    
+    /* ألوان التأكيد */
+    --accent-gold: #D4AF37; /* ذهبي دافئ */
+    --accent-teal: #008080; /* تركوازي */
+    --success-green: #4CAF50; /* أخضر نجاح */
+    --warning-amber: #FFB74D; /* كهرماني تحذير */
+    
+    /* تأثيرات التصميم */
+    --shadow: 0 4px 12px rgba(46, 139, 87, 0.1);
+    --shadow-lg: 0 8px 24px rgba(46, 139, 87, 0.15);
+    --transition: all 0.3s ease;
+    
+    /* تدرجات لونية */
+    --gradient-primary: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%);
+    --gradient-light: linear-gradient(135deg, #98FB98 0%, #C8F7C5 100%);
+    --gradient-dark: linear-gradient(135deg, #228B22 0%, #2E8B57 100%);
+    --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+}
+
+/* إعادة الضبط والإعدادات العامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-charcoal);
+    background-color: var(--cream-white);
+    direction: rtl;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button, input, textarea, select {
+    font-family: 'Cairo', sans-serif;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+/* ============================================
+   الشريط العلوي - تصميم أخضر أنيق
+   ============================================ */
+.header {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    transition: var(--transition);
+    border-bottom: 2px solid var(--light-green);
+}
+
+.header.scrolled {
+    padding: 0.5rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0;
+}
+
+/* شعار GreenLabel باللون الأخضر */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--gradient-primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    box-shadow: 0 4px 8px rgba(46, 139, 87, 0.2);
+    transition: var(--transition);
+}
+
+.logo:hover .logo-icon {
+    transform: rotate(15deg);
+    background: var(--gradient-dark);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-main {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    line-height: 1;
+    letter-spacing: -0.5px;
+}
+
+.logo-sub {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--forest-green);
+    letter-spacing: 0.5px;
+}
+
+/* روابط التنقل */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+    color: var(--dark-charcoal);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-green);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+/* أيقونات التنقل */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.wishlist-icon, .cart-icon {
+    position: relative;
+    font-size: 1.2rem;
+    color: var(--dark-charcoal);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.wishlist-icon:hover, .cart-icon:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-green);
+}
+
+.wishlist-count, .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    font-size: 1.5rem;
+    color: var(--dark-charcoal);
+    transition: var(--transition);
+}
+
+.menu-toggle:hover {
+    color: var(--primary-green);
+}
+
+/* ============================================
+   قسم الهيرو - تصميم جذاب أخضر
+   ============================================ */
+.hero {
+    padding: 10rem 0 5rem;
+    background: var(--gradient-light);
+    position: relative;
+    margin-top: 80px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="%2398FB98" opacity="0.1" d="M0,0 L100,0 L100,100 Z"/></svg>');
+    background-size: cover;
+    z-index: 0;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-logo i {
+    font-size: 3rem;
+    color: white;
+    background: var(--gradient-primary);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(46, 139, 87, 0.3);
+    border: 3px solid white;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    color: var(--dark-charcoal);
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.hero-title span {
+    color: var(--primary-green);
+    position: relative;
+    display: inline-block;
+}
+
+.hero-title span::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--light-green);
+    border-radius: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: var(--forest-green);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--warm-gray);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+/* أزرار الهيرو */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.hero-btn:hover::before {
+    transform: translateX(100%);
+}
+
+.primary-btn {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(46, 139, 87, 0.4);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+
+.secondary-btn:hover {
+    background: var(--primary-green);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ميزات الهيرو */
+.hero-features {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.7rem 1.2rem;
+    background: white;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    font-size: 0.9rem;
+    color: var(--dark-charcoal);
+    border: 1px solid var(--light-gray);
+    transition: var(--transition);
+}
+
+.feature:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(46, 139, 87, 0.15);
+    border-color: var(--light-green);
+}
+
+.feature i {
+    color: var(--primary-green);
+    font-size: 1rem;
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+    height: 400px;
+}
+
+.floating-element {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    box-shadow: var(--shadow-lg);
+    animation: float 6s ease-in-out infinite;
+    border: 2px solid var(--light-green);
+}
+
+.floating-element:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+    top: 50%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.floating-element:nth-child(3) {
+    bottom: 20%;
+    left: 40%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-20px) rotate(5deg); 
+    }
+}
+
+/* ============================================
+   قسم الأقسام - تصميم منظم أخضر
+   ============================================ */
+.categories-section {
+    padding: 6rem 0;
+    background: white;
+    position: relative;
+}
+
+.categories-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, var(--light-green) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, #E8F5E8 0%, transparent 50%);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.categories-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--dark-charcoal);
+    margin-bottom: 1rem;
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.section-title span {
+    color: var(--primary-green);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--warm-gray);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.category-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-primary);
+    transform: translateY(-100%);
+    transition: var(--transition);
+}
+
+.category-card:hover::before {
+    transform: translateY(0);
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--light-green);
+}
+
+.category-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    transition: var(--transition);
+    border: 2px solid var(--light-green);
+}
+
+.category-card:hover .category-icon {
+    background: var(--gradient-primary);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.category-card h3 {
+    color: var(--dark-charcoal);
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.category-card p {
+    color: var(--warm-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.category-link {
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    background: var(--cream-white);
+    border-radius: 50px;
+    color: var(--primary-green);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    border: 1px solid var(--light-green);
+}
+
+.category-card:hover .category-link {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: var(--primary-green);
+}
+
+/* ============================================
+   قسم المنتجات - تصميم أنيق أخضر
+   ============================================ */
+.products-section {
+    padding: 6rem 0;
+    background: var(--cream-white);
+    position: relative;
+}
+
+.products-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(152, 251, 152, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(200, 247, 197, 0.1) 0%, transparent 20%);
+    z-index: 0;
+}
+
+.products-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.products-filter {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.7rem 1.5rem;
+    background: white;
+    border: 1px solid var(--light-gray);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--warm-gray);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 0;
+    height: 0;
+    background: var(--light-green);
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.filter-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.filter-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    color: var(--dark-charcoal);
+    border-color: var(--primary-green);
+}
+
+.filter-btn.active {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: var(--primary-green);
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--light-gray);
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--light-green);
+}
+
+.product-img {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.product-card:hover .product-img img {
+    transform: scale(1.05);
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-category {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    background: var(--gradient-light);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    border: 1px solid var(--light-green);
+}
+
+.product-name {
+    font-size: 1.3rem;
+    color: var(--dark-charcoal);
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.product-description {
+    color: var(--warm-gray);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    display: flex;
+    align-items: baseline;
+    gap: 0.2rem;
+}
+
+.product-price span {
+    font-size: 0.9rem;
+    color: var(--warm-gray);
+    font-weight: 600;
+}
+
+.add-to-cart {
+    padding: 0.7rem 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.add-to-cart::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.add-to-cart:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.add-to-cart span {
+    position: relative;
+    z-index: 1;
+}
+
+.add-to-cart:hover {
+    background: var(--gradient-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
+}
+
+.view-more {
+    text-align: center;
+}
+
+.view-more-btn {
+    padding: 0.9rem 2.5rem;
+    background: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: var(--transition);
+}
+
+.view-more-btn:hover {
+    background: var(--gradient-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
+}
+
+/* ============================================
+   قسم التوصيات - تصميم نظيف أخضر
+   ============================================ */
+.recommendations-section {
+    padding: 6rem 0;
+    background: white;
+    position: relative;
+}
+
+.recommendations-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 60%, var(--light-green) 100%);
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.recommendations-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.recommendation-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.recommendation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: var(--gradient-light);
+    transition: var(--transition);
+    z-index: 0;
+}
+
+.recommendation-card:hover::before {
+    width: 100%;
+}
+
+.recommendation-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--light-green);
+}
+
+.recommendation-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.recommendation-card:hover .recommendation-icon {
+    background: var(--gradient-primary);
+    color: white;
+    transform: scale(1.1);
+}
+
+.recommendation-card h3 {
+    color: var(--dark-charcoal);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.recommendation-card p {
+    color: var(--warm-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.recommendation-link {
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    background: var(--cream-white);
+    border-radius: 50px;
+    color: var(--primary-green);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    border: 1px solid var(--light-green);
+}
+
+.recommendation-card:hover .recommendation-link {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: var(--primary-green);
+}
+
+/* ============================================
+   قسم التواصل - تصميم متناسق أخضر
+   ============================================ */
+.contact-section {
+    padding: 6rem 0;
+    background: var(--gradient-light);
+    position: relative;
+}
+
+.contact-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, white, transparent);
+    z-index: 0;
+}
+
+.contact-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--light-green);
+}
+
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    transition: var(--transition);
+    border: 2px solid var(--light-green);
+}
+
+.contact-card:hover .contact-icon {
+    background: var(--gradient-primary);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.contact-card h3 {
+    color: var(--dark-charcoal);
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.contact-info {
+    color: var(--warm-gray);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.8rem;
+    background: var(--gradient-light);
+    border-radius: 50px;
+    color: var(--primary-green);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    border: 1px solid var(--light-green);
+}
+
+.contact-link:hover {
+    background: var(--gradient-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.whatsapp-link {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    border: 1px solid #25D366;
+}
+
+.whatsapp-link:hover {
+    background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+    color: white;
+}
+
+.social-section {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--light-green);
+}
+
+.social-section h3 {
+    font-size: 1.8rem;
+    color: var(--dark-charcoal);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.social-section h3 span {
+    color: var(--primary-green);
+}
+
+.social-subtitle {
+    color: var(--warm-gray);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    color: white;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon.instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.social-icon.tiktok {
+    background: linear-gradient(45deg, #000000, #25F4EE, #FE2C55);
+}
+
+.social-icon.youtube {
+    background: linear-gradient(45deg, #FF0000, #FF3333);
+}
+
+.social-icon.pinterest {
+    background: linear-gradient(45deg, #BD081C, #E60023);
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0.9;
+}
+
+/* ============================================
+   نموذج الطلب - تصميم نظيف أخضر
+   ============================================ */
+.order-section {
+    padding: 6rem 0;
+    background: white;
+    position: relative;
+}
+
+.order-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 90%, var(--light-green) 0%, transparent 30%),
+        radial-gradient(circle at 90% 10%, #E8F5E8 0%, transparent 30%);
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.order-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.order-form {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--light-green);
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px solid var(--primary-green);
+}
+
+.form-header i {
+    font-size: 2rem;
+    color: var(--primary-green);
+}
+
+.form-header h3 {
+    font-size: 1.6rem;
+    color: var(--dark-charcoal);
+    font-weight: 700;
+}
+
+.form-header h3 span {
+    color: var(--primary-green);
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: var(--dark-charcoal);
+    font-size: 1rem;
+}
+
+.form-group label i {
+    color: var(--primary-green);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 10px;
+    font-size: 1rem;
+    background: var(--cream-white);
+    transition: var(--transition);
+    color: var(--dark-charcoal);
+    border: 1px solid var(--light-green);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+    outline: none;
+}
+
+.cart-summary-form {
+    background: var(--cream-white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid var(--light-green);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.empty-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: var(--warm-gray);
+}
+
+.empty-summary i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--light-gray);
+}
+
+.form-total {
+    background: var(--cream-white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--light-green);
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--light-gray);
+    color: var(--dark-charcoal);
+}
+
+.total-row:last-child {
+    border-bottom: none;
+}
+
+.beauty-discount {
+    color: var(--primary-green);
+    font-weight: 600;
+}
+
+.gift {
+    color: var(--forest-green);
+    font-style: italic;
+    font-weight: 600;
+}
+
+.grand-total {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--dark-charcoal);
+    padding-top: 1rem;
+    border-top: 3px solid var(--primary-green);
+}
+
+.beauty-commitment {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: var(--gradient-light);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border-right: 4px solid var(--primary-green);
+}
+
+.beauty-commitment i {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+}
+
+.beauty-commitment p {
+    color: var(--dark-charcoal);
+    font-weight: 600;
+    margin: 0;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.submit-btn:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.submit-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.submit-btn:hover {
+    background: var(--gradient-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 139, 87, 0.3);
+}
+
+/* ============================================
+   الفوتر - تصميم أنيق أخضر
+   ============================================ */
+.footer {
+    background: linear-gradient(135deg, var(--forest-green) 0%, var(--primary-green) 100%);
+    color: white;
+    padding: 5rem 0 2rem;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-gold);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo .logo-icon {
+    background: white;
+    color: var(--primary-green);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-logo h3 {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 800;
+}
+
+.footer-logo h3 span {
+    color: var(--light-green);
+}
+
+.tagline {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    font-weight: 500;
+}
+
+.footer-description {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.footer .social-icons {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.footer .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer .social-icon:hover {
+    background: white;
+    color: var(--primary-green);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-weight: 700;
+}
+
+.footer-links h3 span,
+.footer-contact h3 span {
+    color: var(--light-green);
+}
+
+.footer-links ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.footer-links ul li a:hover {
+    color: var(--light-green);
+    padding-right: 0.5rem;
+}
+
+.footer-contact ul li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+.footer-contact ul li i {
+    color: var(--light-green);
+    width: 20px;
+}
+
+.footer-newsletter {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-newsletter h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.footer-newsletter p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+    border-radius: 50px;
+    border: none;
+    font-family: 'Cairo', sans-serif;
+    background: white;
+    color: var(--dark-charcoal);
+    border: 1px solid var(--light-green);
+}
+
+.newsletter-form button {
+    background: var(--gradient-gold);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-form button:hover {
+    background: var(--gradient-primary);
+    transform: rotate(15deg);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.copyright p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.copyright span {
+    color: var(--light-green);
+    font-weight: 600;
+}
+
+.footer-certifications {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.certification {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: white;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.certification i {
+    color: var(--light-green);
+}
+
+/* ============================================
+   عناصر إضافية
+   ============================================ */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background: var(--gradient-dark);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.notification {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    padding: 1rem 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    z-index: 3000;
+    transform: translateX(-150%);
+    transition: transform 0.5s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    max-width: 350px;
+    border-right: 4px solid var(--light-green);
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification i {
+    font-size: 1.2rem;
+}
+
+/* سلة المشتريات */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 380px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-green);
+}
+
+.cart-sidebar.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--light-green);
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.cart-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.cart-logo i {
+    font-size: 1.5rem;
+}
+
+.cart-logo h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.cart-logo h3 span {
+    color: var(--light-green);
+}
+
+.close-cart {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.close-cart:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+}
+
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--warm-gray);
+    text-align: center;
+}
+
+.empty-cart i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--light-gray);
+}
+
+.cart-footer {
+    padding: 1.5rem;
+    border-top: 2px solid var(--light-green);
+    background: var(--cream-white);
+}
+
+.cart-summary {
+    margin-bottom: 1.5rem;
+}
+
+.cart-subtotal, .cart-discount, .cart-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    color: var(--dark-charcoal);
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.cart-total {
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-top: 2px solid var(--light-green);
+    padding-top: 1rem;
+    border-bottom: none;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    transition: var(--transition);
+    border: 1px solid var(--primary-green);
+}
+
+.checkout-btn:hover {
+    background: var(--gradient-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
+}
+
+.beauty-message {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    background: var(--gradient-light);
+    border-radius: 8px;
+    margin-top: 1rem;
+    color: var(--dark-charcoal);
+    font-size: 0.9rem;
+    border: 1px solid var(--light-green);
+}
+
+.beauty-message i {
+    color: var(--primary-green);
+}
+
+/* ============================================
+   التصميم المتجاوب
+   ============================================ */
+@media (max-width: 1200px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+    
+    .hero-image {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .contact-cards {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 3rem;
+        gap: 2rem;
+        transition: var(--transition);
+        z-index: 999;
+        box-shadow: var(--shadow);
+        border-top: 2px solid var(--light-green);
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .hero-title {
+        font-size: 2.4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .order-form {
+        padding: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .categories-grid,
+    .products-container,
+    .recommendations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .notification {
+        left: 10px;
+        right: 10px;
+        max-width: calc(100% - 20px);
+    }
+    
+    .scroll-top {
+        left: 20px;
+        bottom: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-icon {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.8rem;
+    }
+}

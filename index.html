@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenLabel - علامة الجمال الخضراء</title>
+    <meta name="description" content="GreenLabel - علامة رائدة في مستحضرات التجميل والعناية الشخصية الطبيعية والعضوية. منتجات آمنة وفعالة لجمال طبيعي.">
+    <meta name="author" content="أحمد عمار العمري">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">Green</span>
+                        <span class="logo-sub">Label</span>
+                    </div>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+                    <li><a href="#products" class="nav-link">منتجاتنا</a></li>
+                    <li><a href="#categories" class="nav-link">الأقسام</a></li>
+                    <li><a href="#about" class="nav-link">عن GreenLabel</a></li>
+                    <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+                    <li><a href="#order" class="nav-link">طلباتي</a></li>
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="#" class="wishlist-icon">
+                        <i class="fas fa-heart"></i>
+                        <span class="wishlist-count">3</span>
+                    </a>
+                    <a href="#" class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- سلة المشتريات (جانبية) -->
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <div class="cart-logo">
+                <i class="fas fa-spa"></i>
+                <h3>Green<span>Label</span></h3>
+            </div>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- سيتم ملؤها عبر JavaScript -->
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>سلة التسوق فارغة</p>
+                <a href="#products" class="browse-products">تصفح المنتجات</a>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="cart-subtotal">
+                    <span>المجموع الجزئي:</span>
+                    <span id="cartSubtotal">0.00</span> <span>دينار</span>
+                </div>
+                <div class="cart-discount">
+                    <span>خصم GreenLabel:</span>
+                    <span id="cartDiscount">-0.00</span> <span>دينار</span>
+                </div>
+                <div class="cart-total">
+                    <span>المجموع الكلي:</span>
+                    <span id="cartTotal">0.00</span> <span>دينار</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">
+                <i class="fas fa-credit-card"></i> إتمام الشراء
+            </button>
+            <div class="beauty-message">
+                <i class="fas fa-gem"></i>
+                <span>جمالك يستحق الأفضل من GreenLabel</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- إشعار -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationText"></span>
+    </div>
+
+    <!-- القسم الرئيسي -->
+    <main>
+        <!-- قسم الهيرو -->
+        <section class="hero beauty-hero" id="home">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-logo">
+                        <i class="fas fa-crown"></i>
+                        <h1 class="hero-title">Green<span>Label</span></h1>
+                    </div>
+                    <h2 class="hero-subtitle">علامة الجمال الخضراء - جمال طبيعي من الطبيعة</h2>
+                    <p class="hero-description">نقدم لكم مجموعة مميزة من مستحضرات التجميل والعناية الشخصية المصنوعة من مكونات طبيعية وعضوية. جمالك يستحق الأفضل مع GreenLabel.</p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="hero-btn primary-btn">اكتشف المنتجات</a>
+                        <a href="#categories" class="hero-btn secondary-btn">تصفح الأقسام</a>
+                        <a href="#about" class="hero-btn outline-btn">عن العلامة</a>
+                    </div>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>مكونات طبيعية</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-allergies"></i>
+                            <span>مناسبة للبشرة الحساسة</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-certificate"></i>
+                            <span>جودة ممتازة</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>توصيل سريع</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-element">
+                        <i class="fas fa-lipstick"></i>
+                    </div>
+                    <div class="floating-element">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <div class="floating-element">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الأقسام -->
+        <section class="categories-section" id="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">أقسام <span>GreenLabel</span></h2>
+                    <p class="section-subtitle">اكتشف مجموعتنا المميزة من منتجات الجمال والعناية</p>
+                </div>
+                
+                <div class="categories-grid">
+                    <div class="category-card skincare">
+                        <div class="category-icon">
+                            <i class="fas fa-hand-sparkles"></i>
+                        </div>
+                        <h3>العناية بالبشرة</h3>
+                        <p>مستحضرات تنظيف، ترطيب، والعناية اليومية</p>
+                        <a href="#skincare" class="category-link">تصفح الآن</a>
+                    </div>
+                    
+                    <div class="category-card makeup">
+                        <div class="category-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>مستحضرات التجميل</h3>
+                        <p>مكياج عالي الجودة ومستدام</p>
+                        <a href="#makeup" class="category-link">تصفح الآن</a>
+                    </div>
+                    
+                    <div class="category-card hair">
+                        <div class="category-icon">
+                            <i class="fas fa-air-freshener"></i>
+                        </div>
+                        <h3>العناية بالشعر</h3>
+                        <p>شامبو، بلسم، ومستحضرات شعر طبيعية</p>
+                        <a href="#hair" class="category-link">تصفح الآن</a>
+                    </div>
+                    
+                    <div class="category-card fragrance">
+                        <div class="category-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h3>العطور</h3>
+                        <p>عطور طبيعية وخلطات عطرية فريدة</p>
+                        <a href="#fragrance" class="category-link">تصفح الآن</a>
+                    </div>
+                    
+                    <div class="category-card body">
+                        <div class="category-icon">
+                            <i class="fas fa-bath"></i>
+                        </div>
+                        <h3>العناية بالجسم</h3>
+                        <p>مستحضرات استحمام، لوشن، وتقشير</p>
+                        <a href="#body" class="category-link">تصفح الآن</a>
+                    </div>
+                    
+                    <div class="category-card men">
+                        <div class="category-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>منتجات الرجال</h3>
+                        <p>عناية خاصة بالرجال من GreenLabel</p>
+                        <a href="#men" class="category-link">تصفح الآن</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم المنتجات المميزة -->
+        <section class="products-section" id="products">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-logo">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h2 class="section-title">منتجات <span>GreenLabel</span> المميزة</h2>
+                    <p class="section-subtitle">اكتشف أفضل منتجاتنا للجمال والعناية الشخصية</p>
+                </div>
+                
+                <div class="products-filter">
+                    <button class="filter-btn active" data-category="all">الكل</button>
+                    <button class="filter-btn" data-category="العناية بالبشرة">العناية بالبشرة</button>
+                    <button class="filter-btn" data-category="مستحضرات التجميل">مكياج</button>
+                    <button class="filter-btn" data-category="العناية بالشعر">العناية بالشعر</button>
+                    <button class="filter-btn" data-category="العناية بالجسم">العناية بالجسم</button>
+                    <button class="filter-btn" data-category="العطور">العطور</button>
+                </div>
+                
+                <div class="products-container" id="productsContainer">
+                    <!-- سيتم ملؤها عبر JavaScript -->
+                </div>
+                
+                <div class="beauty-message">
+                    <i class="fas fa-gem"></i>
+                    <p>جمالك الطبيعي هو أولويتنا. منتجات GreenLabel مصممة خصيصًا لإبراز جمالك بطريقة آمنة وطبيعية</p>
+                </div>
+                
+                <div class="view-more">
+                    <button class="view-more-btn" id="viewMoreBtn">
+                        <span>عرض المزيد من المنتجات</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم عن GreenLabel -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">قصة <span>GreenLabel</span></h2>
+                    <p class="section-subtitle">علامة الجمال التي تثق بها</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&h=400&fit=crop" alt="GreenLabel - منتجات تجميل طبيعية">
+                    </div>
+                    <div class="about-text">
+                        <div class="about-logo">
+                            <i class="fas fa-spa"></i>
+                            <h3>Green<span>Label</span></h3>
+                        </div>
+                        <p>GreenLabel هي علامة رائدة في عالم مستحضرات التجميل والعناية الشخصية الطبيعية. نؤمن بأن الجمال الحقيقي يبدأ من الطبيعة، لذلك نلتزم باستخدام أفضل المكونات الطبيعية والعضوية في جميع منتجاتنا.</p>
+                        
+                        <div class="about-mission">
+                            <h4><i class="fas fa-bullseye"></i> رسالتنا</h4>
+                            <p>تقديم منتجات تجميل وعناية شخصية عالية الجودة تعتمد على مكونات طبيعية وآمنة، مع الحفاظ على بيئتنا وصحة بشرتنا.</p>
+                        </div>
+                        
+                        <div class="about-vision">
+                            <h4><i class="fas fa-eye"></i> رؤيتنا</h4>
+                            <p>أن نكون العلامة الأولى في الشرق الأوسط في مجال التجميل الطبيعي والعناية الشخصية المستدامة.</p>
+                        </div>
+                        
+                        <div class="about-values">
+                            <h4><i class="fas fa-heart"></i> قيمنا</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> الجودة والتميز</li>
+                                <li><i class="fas fa-check-circle"></i> الأمان والطبيعية</li>
+                                <li><i class="fas fa-check-circle"></i> الابتكار والتطوير</li>
+                                <li><i class="fas fa-check-circle"></i> الاستدامة البيئية</li>
+                                <li><i class="fas fa-check-circle"></i> رضا العملاء</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم التوصيات -->
+        <section class="recommendations-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">نصيحة <span>GreenLabel</span></h2>
+                    <p class="section-subtitle">نصائح خبراء الجمال للعناية المثالية</p>
+                </div>
+                
+                <div class="recommendations-grid">
+                    <div class="recommendation-card">
+                        <div class="recommendation-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <h3>واقي الشمس اليومي</h3>
+                        <p>استخدمي واقي الشمس يوميًا لحماية بشرتك من أضرار الأشعة فوق البنفسجية.</p>
+                        <a href="#" class="recommendation-link">اكتشف المنتجات</a>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="recommendation-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>ترطيب البشرة</h3>
+                        <p>احرصي على ترطيب بشرتك يوميًا للحفاظ على نضارتها وشبابها.</p>
+                        <a href="#" class="recommendation-link">اكتشف المنتجات</a>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="recommendation-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h3>تنظيف البشرة</h3>
+                        <p>نظفي بشرتك يوميًا لإزالة الماكياج والشوائب للحفاظ على صحة مسامها.</p>
+                        <a href="#" class="recommendation-link">اكتشف المنتجات</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم التواصل -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">تواصل مع <span>GreenLabel</span></h2>
+                    <p class="section-subtitle">نحن هنا للإجابة على استفساراتك حول الجمال والعناية</p>
+                </div>
+                
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>هاتف الجمال</h3>
+                        <p class="contact-info">+964 783 927 7919</p>
+                        <a href="tel:+9647839277919" class="contact-link">
+                            <i class="fas fa-phone"></i> استشيري خبراء GreenLabel
+                        </a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>البريد الإلكتروني</h3>
+                        <p class="contact-info">info@greenlabel.iq</p>
+                        <a href="mailto:info@greenlabel.iq" class="contact-link">
+                            <i class="fas fa-envelope"></i> أرسلي استفسارك
+                        </a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>واتساب الجمال</h3>
+                        <p class="contact-info">استشارات جمالية مباشرة</p>
+                        <a href="https://wa.me/9647839277919" target="_blank" class="contact-link whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> ابدأي محادثة
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="social-section">
+                    <h3>تابع <span>GreenLabel</span> على وسائل التواصل</h3>
+                    <p class="social-subtitle">كني أول من يعرف عن عروضنا ومنتجاتنا الجديدة</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="social-icon tiktok">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok</span>
+                        </a>
+                        <a href="#" class="social-icon youtube">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="#" class="social-icon pinterest">
+                            <i class="fab fa-pinterest-p"></i>
+                            <span>Pinterest</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم نموذج الطلب -->
+        <section class="order-section" id="order">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">طلبات <span>GreenLabel</span></h2>
+                    <p class="section-subtitle">املأ النموذج لتلقي منتجات الجمال في منزلك</p>
+                </div>
+                
+                <form class="order-form" id="orderForm">
+                    <div class="form-header">
+                        <i class="fas fa-crown"></i>
+                        <h3>طلب منتجات <span>GreenLabel</span></h3>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i> الاسم الكامل *
+                            </label>
+                            <input type="text" id="name" required placeholder="أدخل اسمك الكامل">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i> رقم الهاتف *
+                            </label>
+                            <input type="tel" id="phone" required placeholder="أدخل رقم هاتفك">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i> البريد الإلكتروني *
+                        </label>
+                        <input type="email" id="email" required placeholder="أدخل بريدك الإلكتروني">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">
+                            <i class="fas fa-map-marker-alt"></i> العنوان *
+                        </label>
+                        <input type="text" id="address" required placeholder="أدخل عنوانك بالتفصيل">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="skin-type">
+                            <i class="fas fa-user-md"></i> نوع بشرتك (اختياري)
+                        </label>
+                        <select id="skin-type">
+                            <option value="">اختر نوع بشرتك</option>
+                            <option value="normal">بشرة عادية</option>
+                            <option value="dry">بشرة جافة</option>
+                            <option value="oily">بشرة دهنية</option>
+                            <option value="combination">بشرة مختلطة</option>
+                            <option value="sensitive">بشرة حساسة</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>منتجات GreenLabel في السلة</label>
+                        <div class="cart-summary-form" id="cartSummary">
+                            <!-- سيتم ملؤها عبر JavaScript -->
+                            <div class="empty-summary">
+                                <i class="fas fa-shopping-bag"></i>
+                                <p>لا توجد منتجات في السلة</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="shipping">
+                                <i class="fas fa-truck"></i> طريقة الشحن *
+                            </label>
+                            <select id="shipping" required>
+                                <option value="">اختر طريقة الشحن</option>
+                                <option value="express">توصيل سريع (24 ساعة) - 10,000 دينار</option>
+                                <option value="standard">توصيل عادي (2-3 أيام) - 5,000 دينار</option>
+                                <option value="free">توصيل مجاني (5-7 أيام)</option>
+                                <option value="pickup">استلام من المعرض (مجاني)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="payment">
+                                <i class="fas fa-credit-card"></i> طريقة الدفع *
+                            </label>
+                            <select id="payment" required>
+                                <option value="">اختر طريقة الدفع</option>
+                                <option value="cash">الدفع عند الاستلام</option>
+                                <option value="transfer">تحويل بنكي</option>
+                                <option value="card">بطاقة ائتمان/مدى</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">
+                            <i class="fas fa-sticky-note"></i> ملاحظات إضافية
+                        </label>
+                        <textarea id="notes" rows="4" placeholder="ملاحظات حول طلبك، حساسية معينة، أو طلبات خاصة..."></textarea>
+                    </div>
+                    
+                    <div class="form-total">
+                        <div class="total-row">
+                            <span>مجموع المنتجات:</span>
+                            <span id="formProductsTotal">0.00 دينار</span>
+                        </div>
+                        <div class="total-row">
+                            <span>تكلفة الشحن:</span>
+                            <span id="formShippingCost">0.00 دينار</span>
+                        </div>
+                        <div class="total-row beauty-discount">
+                            <span>خصم GreenLabel:</span>
+                            <span id="beautyDiscount">-0.00 دينار</span>
+                        </div>
+                        <div class="total-row gift">
+                            <span>هدية GreenLabel:</span>
+                            <span>عينة مجانية مع كل طلب</span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span>المجموع الكلي:</span>
+                            <span id="formGrandTotal">0.00 دينار</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <div class="beauty-commitment">
+                            <i class="fas fa-gem"></i>
+                            <p>مع كل طلب، تحصلين على استشارة جمالية مجانية من خبراء GreenLabel</p>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> إرسال طلب GreenLabel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Green<span>Label</span></h3>
+                            <p class="tagline">علامة الجمال الخضراء</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">GreenLabel تقدم لك أفضل مستحضرات التجميل والعناية الشخصية الطبيعية. جمالك الطبيعي هو شغفنا، ونحن ملتزمون بتقديم منتجات آمنة وفعالة تعتمد على أفضل المكونات الطبيعية.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-snapchat-ghost"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>أقسام <span>GreenLabel</span></h3>
+                    <ul>
+                        <li><a href="#skincare"><i class="fas fa-chevron-left"></i> العناية بالبشرة</a></li>
+                        <li><a href="#makeup"><i class="fas fa-chevron-left"></i> مستحضرات التجميل</a></li>
+                        <li><a href="#hair"><i class="fas fa-chevron-left"></i> العناية بالشعر</a></li>
+                        <li><a href="#fragrance"><i class="fas fa-chevron-left"></i> العطور</a></li>
+                        <li><a href="#body"><i class="fas fa-chevron-left"></i> العناية بالجسم</a></li>
+                        <li><a href="#men"><i class="fas fa-chevron-left"></i> منتجات الرجال</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>معلومات <span>GreenLabel</span></h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> بغداد، العراق - معرض GreenLabel</li>
+                        <li><i class="fas fa-phone"></i> +964 783 927 7919</li>
+                        <li><i class="fas fa-envelope"></i> info@greenlabel.iq</li>
+                        <li><i class="fas fa-clock"></i> الأحد - الخميس: 9 صباحًا - 8 مساءً</li>
+                        <li><i class="fas fa-user-tie"></i> المطور: أحمد عمار العمري</li>
+                    </ul>
+                    
+                    <div class="footer-newsletter">
+                        <h4>اشتركي في نشرة GreenLabel</h4>
+                        <p>احصلي على نصائح جمالية وعروض حصرية</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="بريدك الإلكتروني" required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>© 2023 <span>GreenLabel</span>. جميع الحقوق محفوظة.</p>
+                        <p>تم التطوير بواسطة <span>أحمد عمار العمري</span> - علامة الجمال الخضراء</p>
+                    </div>
+                    <div class="footer-certifications">
+                        <div class="certification">
+                            <i class="fas fa-leaf"></i>
+                            <span>منتجات طبيعية</span>
+                        </div>
+                        <div class="certification">
+                            <i class="fas fa-allergies"></i>
+                            <span>آمنة للبشرة</span>
+                        </div>
+                        <div class="certification">
+                            <i class="fas fa-certificate"></i>
+                            <span>جودة ممتازة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- زر العودة للأعلى -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
